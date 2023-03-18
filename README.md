@@ -7,7 +7,7 @@
 
 ## Organization
 
-### Team Lider
+### Team Leader
 
 - __Name__: Eduardo Queirós (Eduardo)
 - __Github__: [code36u4r60](https://github.com/code36u4r60)
