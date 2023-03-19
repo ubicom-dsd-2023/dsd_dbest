@@ -21,7 +21,7 @@ A database architect is a professional who designs and plans the structure of da
 
 ### Database Engineer
 
-- __Name__: (Brioche)
+- __Name__: Kangjie Liu (Brioche)
 - __Github__: [briocheKJ](https://github.com/briocheKJ)
 
 Database engineer is a professional who creates, maintains, and optimizes databases for software applications and systems. They ensure that databases are secure, scalable, and meet the needs of the application or system. They work with other members of the development team to ensure that the database integrates seamlessly with the software system.
@@ -35,17 +35,21 @@ Responsible for validating the software architecture of the database and it's im
 
 ### Tester (Infrastructure Tester)
 
-- __Name__: (Maxwell)
+- __Name__: Wei Zhoujun (Maxwell)
 - __Github__: []()
 
 A Database Infrastructure Tester tests the hardware, network, and storage systems supporting the database to optimize its performance, availability, and scalability.
 
 ### Database Developers
 
-- __Name__: (Still)
+- __Name__: 李振河 (Still)
 - __Github__: []()
 
-- __Name__: (Watson)  
+- __Name__: Shiyu Wang (Watson)  
 - __Github__: []()
 
 A database developer is a professional who designs, implements, and maintains databases used by software applications and systems.
+
+
+
+
