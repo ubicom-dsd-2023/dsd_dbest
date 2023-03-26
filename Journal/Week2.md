@@ -14,10 +14,18 @@ Write down what was not done during the week and why (difficulties).
 ### Brioche (Database Engineer):
 
 #### Done
-Write down what was done during the week.
+Reviewed the SQL course taken last semester
+
+Learned to do basic operations with PostgreSQL
+
+Started to learn docker
+
+Discussed with embedded system group about , got known that data traffic should be 5 frames per second with 6 sensors, and a frame contains 9 numbers. Still don't know that the size required.
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
+been sick with COVID, not clear on the distinction between architecture and infrastructure
+
+
 
 
 ### Carlos (Architecture Tester):
