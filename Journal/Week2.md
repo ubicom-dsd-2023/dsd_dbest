@@ -14,19 +14,17 @@ Write down what was not done during the week and why (difficulties).
 ### Brioche (Database Engineer):
 
 #### Done
-Reviewed the SQL course taken last semester
-
-Learned to do basic operations with PostgreSQL
-
-Started to learn docker
-
-Discussed with embedded system group about , got known that data traffic should be 5 frames per second with 6 sensors, and a frame contains 9 numbers. Still don't know that the size required.
+- Reviewed the SQL course taken last semester
+- Learned to do basic operations with PostgreSQL
+- Started to learn docker
+- Discussed with embedded system group about  
+  - got known that data traffic should be 5 frames per second with 6 sensors
+  - frame contains 9 numbers
+  - Still don't know that the size required.
 
 #### Not done, why?
-been sick with COVID, not clear on the distinction between architecture and infrastructure
-
-
-
+- been sick with COVID
+- not clear on the distinction between architecture and infrastructure
 
 ### Carlos (Architecture Tester):
 
@@ -40,34 +38,40 @@ Write down what was not done during the week and why (difficulties).
 ### Maxwell (Infrastructure Tester):
 
 #### Done
-Reviewed the SQL course taken last semester
-
-Learned to do basic operations with PostgreSQL
-
-Started to learn docker
+- Reviewed the SQL course taken last semester
+- Learned to do basic operations with PostgreSQL
+- Started to learn docker
 
 #### Not done, why?
-Haven't finished learning Docker
+- Haven't finished learning Docker
+- Haven't devised a strategy to test database infrastructure
 
-Haven't devised a strategy to test database infrastructure
-
-Reason: been sick with COVID, not clear on the distinction between architecture and infrastructure
+Reason: 
+  - been sick with COVID
+  - not clear on the distinction between architecture and infrastructure
 
 ### Still (Database Developers):
 
 #### Done
-This week I have learned about PostgreSQL and installed PostgreSQL on my  VM Ware(Linux). I use beekeeper to control my database conveniently. I create our project's database(Production & Testing). I learn how to use Git.
+This week I have:
+- learned about PostgreSQL
+- installed PostgreSQL on my VM Ware(Linux)
+- I use beekeeper to control my database conveniently. 
+- I create our project's database(Production & Testing). 
+- I learn how to use Git.
 
 #### Not done, why?
-I haven't learn well about docker. Because I think it needs some time to practice it. I will do this at the beginning of next week.
-
+- I haven't learn well about docker. 
+  - Because I think it needs some time to practice it.
+- I will do this at the beginning of next week.
 
 ### Watson  (Database Developers):
 
 #### Done
-This week I have learned about PostgreSQL and installed PostgreSQL on a server which is rented by myself. And I use pgAdmin4 to manage it.
-
-I create our project's database.(maybe. But there it's no data in it. We don't have the R-E and data type)
+- This week I have learned about PostgreSQL
+- installed PostgreSQL on a server which is rented by myself. 
+- And I use pgAdmin4 to manage it.
+- I create our project's database.(maybe. But there it's no data in it. We don't have the R-E and data type)
 
 #### Not done, why?
 I don't know if I finish the task which is creating our project's database. Because I just creat database,but there is no Datasheet in it.
