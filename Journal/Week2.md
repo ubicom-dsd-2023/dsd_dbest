@@ -65,11 +65,12 @@ I haven't learn well about docker. Because I think it needs some time to practic
 ### Watson  (Database Developers):
 
 #### Done
-Write down what was done during the week.
+This week I have learned about PostgreSQL and installed PostgreSQL on a server which is rented by myself. And I use pgAdmin4 to manage it.
+
+I create our project's database.(maybe. But there it's no data in it. We don't have the R-E and data type)
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
-
+I don't know if I finish the task which is creating our project's database. Because I just creat database,but there is no Datasheet in it.
 
 
 ## Next goals:
