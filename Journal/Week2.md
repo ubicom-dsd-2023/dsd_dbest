@@ -33,12 +33,16 @@ Write down what was not done during the week and why (difficulties).
 
 #### Done
 Reviewed the SQL course taken last semester
+
 Learned to do basic operations with PostgreSQL
+
 Started to learn docker
 
 #### Not done, why?
 Haven't finished learning Docker
+
 Haven't devised a strategy to test database infrastructure
+
 Reason: been sick with COVID, not clear on the distinction between architecture and infrastructure
 
 ### Still (Database Developers):
