@@ -41,10 +41,10 @@ Write down what was not done during the week and why (difficulties).
 ### Still (Database Developers):
 
 #### Done
-Write down what was done during the week.
+This week I have learned about PostgreSQL and installed PostgreSQL on my  VM Ware(Linux). I use beekeeper to control my database conveniently. I create our project's database(Production & Testing). I learn how to use Git.
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
+I haven't learn well about docker. Because I think it needs some time to practice it. I will do this at the beginning of next week.
 
 
 ### Watson  (Database Developers):
