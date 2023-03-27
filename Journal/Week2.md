@@ -36,7 +36,7 @@ Write down what was done during the week.
 -started to learn SQLBolt
 -started to learn docker
 -started to learn how to do proper tests in SQL database
--read some articles about Database tests
+
 
 #### Not done, why?
 Write down what was not done during the week and why (difficulties).
