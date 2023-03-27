@@ -5,10 +5,12 @@
 ### Bill (Database Architect):
 
 #### Done
-Write down what was done during the week.
+- Learned how to devise a database project:
+  - Introduction to data normalization
+  - R-E model
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
+- Spoke with Server Team to find what kind of data needs to be stored (delayed - taking too much time figuring out what questions to ask)
 
 
 ### Brioche (Database Engineer):
