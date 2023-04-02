@@ -66,11 +66,14 @@ Write down what was not done during the week and why (difficulties).
 ### Watson  (Database Developers):
 
 #### Done
-Write down what was done during the week.
+I have learned how to use docker.
+I have created the production and test database in the postgres container
+
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
-
+I had the same problem as Still.I find that when I commit the container to image, there is no data in the image. 
+I think the reason is that the image of postgres saves the database in a file which will not be committed when you commit the container to a image. 
+There may be some way to solve this problem. But why we need use the docker to creat database? Do we often need to migrate databases?
 
 
 ## Next goals:
