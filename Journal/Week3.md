@@ -41,10 +41,26 @@ Write down what was not done during the week and why (difficulties).
 ### Still (Database Developers):
 
 #### Done
-Write down what was done during the week.
+-  This week I have learned how to use docker 
+- I have created the production and test database in the postgres container
+- I have registered on the dockerhub
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
+- Now I can't commit my DB container to the dockerhub.
+
+  > my method is :
+  >
+  > 1.  use  "docker commit" to commit the container to the image
+  > 2. login the dockerhub
+  > 3. push the image
+
+  It can push to the dockerhub successfully. But I find it's an empty image. The databases I created  have lost.
+
+- I can't  understand why the database lost when I commit the container to a image
+
+- I searched on the net but it only has the solution to MySQL about this problem.
+
+- I spend a lot of time trying to address this problem. But I failed. (crying) 
 
 
 ### Watson  (Database Developers):
