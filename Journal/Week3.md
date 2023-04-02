@@ -32,11 +32,12 @@ Write down what was not done during the week and why (difficulties).
 ### Maxwell (Infrastructure Tester):
 
 #### Done
-Write down what was done during the week.
+- Learned to use Docker
+- Learned some database testing methods online
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
-
+- Haven't been able to run the database because of the difficulties the developers mentioned
+- Haven't decided on a testing strategy that we'll use
 
 ### Still (Database Developers):
 
