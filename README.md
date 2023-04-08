@@ -131,7 +131,7 @@ docker exec -it postgres4 bash
 
 ​				to enter the container "postgres4"
 
-![image-20230405150911893](C:\Users\l'zh\AppData\Roaming\Typora\typora-user-images\image-20230405150911893.png)
+![image-20230405150911893](https://img-blog.csdnimg.cn/0f7452a55b524825a80acfb58f4d0d4e.png)
 
 
 
