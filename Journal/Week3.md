@@ -34,9 +34,10 @@ Write down what was not done during the week and why (difficulties).
 #### Done
 - Learned to use Docker
 - Learned some database testing methods online
+- Tried and successfully pulled the database into my machine using Docker
+- Helped Brioche finish Requirement Analysis
 
 #### Not done, why?
-- Haven't been able to run the database because of the difficulties the developers mentioned
 - Haven't decided on a testing strategy that we'll use
 
 ### Still (Database Developers):
