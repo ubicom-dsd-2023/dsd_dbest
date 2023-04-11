@@ -14,10 +14,14 @@ Write down what was not done during the week and why (difficulties).
 ### Brioche (Database Engineer):
 
 #### Done
-Write down what was done during the week.
+- finished writing Requirement Analysis, containing modifying most of the data flow and added several user cases.
+- learned to use docker
+- discussed with algorithm team to determine the duty we should do on data cleansing
+- design a draft of E-R diagram (hand-writing version)
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
+- still cannot confirm the data type of each schema, since there is not clue in other team's RA to find out the data type
+- didn't have enough cooperations with Bill to design the model, since I thought he was in his holiday, there is also my subjective problem.
 
 
 ### Carlos (Architecture Tester):
