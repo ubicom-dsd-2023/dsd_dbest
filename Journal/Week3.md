@@ -27,10 +27,12 @@ Write down what was not done during the week and why (difficulties).
 ### Carlos (Architecture Tester):
 
 #### Done
-Write down what was done during the week.
+- Learned more about PostgreSQL
+- Learned more about Docker
+- Tried to pull the database into my machine using docker
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
+- Unsuccessfull to pull the database into my machine, and I´m trying to fix the problems.
 
 
 ### Maxwell (Infrastructure Tester):
