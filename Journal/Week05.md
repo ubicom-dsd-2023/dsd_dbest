@@ -51,10 +51,12 @@ Write down what was not done during the week and why (difficulties).
 ### Watson  (Database Developers):
 
 #### Done
-Write down what was done during the week.
+- We update our docker image and we creat the actual data table. 
+- We update the readme document.
+- I learn about how to use python to manage database and CRUD.
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
+- We need more detail about interface in order to finish our SDS.
 
 
 ## Next goals:
