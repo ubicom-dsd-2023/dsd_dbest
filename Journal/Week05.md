@@ -14,11 +14,13 @@ Write down what was not done during the week and why (difficulties).
 ### Brioche (Database Engineer):
 
 #### Done
-Write down what was done during the week.
+- established a reasonable version of ER model
+- supported Still and Waston to improve the current database, tell them the structure of the form
+- communicated with Bill and other teams to preliminarily determine the method of providing services to Server group -- writing python functions for Service group (such as SQL query) 
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
-
+- didn't determine the ER model, it's because Web team still has some requirements that aren't determined
+- cannot give a credible interface design scheme, because the integrating version of RA hasn't determined
 
 ### Carlos (Architecture Tester):
 
