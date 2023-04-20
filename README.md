@@ -42,7 +42,7 @@ A Database Infrastructure Tester tests the hardware, network, and storage system
 
 ### Database Developers
 
-- __Name__: 李振河 (Still)
+- __Name__: Zhenhe Li (Still)
 - __Github__: []()
 
 - __Name__: Shiyu Wang (Watson)  
@@ -53,6 +53,8 @@ A database developer is a professional who designs, implements, and maintains da
 
 
 ## document about DB's docker image (version 1.0)
+
+**2023.4.19**  update the database  see **version2.0** below
 
 ### environments
 
@@ -219,4 +221,55 @@ docker exec -it postgres4 bash
 
     ![image-20230405153023912](https://img-blog.csdnimg.cn/2735eea180ab452490886b4ef0a4fcc9.png)
 
-  
+ ## version 2.0
+  - we update the table-structure of database. Use
+
+```shell
+docker pull sstillzh/pgsql:2.0
+```
+
+- then we get the new image. Check it.
+
+
+
+- the rest thing is just like version1.0
+- please notice that the new image's name is **sstillzh/pgsql:2.0**
+
+
+
+- please check the structure of our relation tables and see if there exists the mistake.
+
+
+
+- I use the **beekeeper**(recommended by Eduardo )to manage our database. Here is a presentation of our relation tables.
+
+​		
+
+- the tables of "production" database("test" database is the same)
+
+![iF9h4P.png](https://i.328888.xyz/2023/04/20/iF9h4P.png)
+
+- the structure of "User" table
+
+![iF9MBV.png](https://i.328888.xyz/2023/04/20/iF9MBV.png)
+
+- the structure of “Frame” table
+
+![iFJzbw.png](https://i.328888.xyz/2023/04/20/iFJzbw.png)
+
+![iFJeiz.png](https://i.328888.xyz/2023/04/20/iFJeiz.png)
+
+- the structure of "MotionRecord" table
+
+![iFKyQc.png](https://i.328888.xyz/2023/04/20/iFKyQc.png)
+
+![iFKAlA.png](https://i.328888.xyz/2023/04/20/iFKAlA.png)
+
+- the structure of "Device" table
+
+![iFKtnV.png](https://i.328888.xyz/2023/04/20/iFKtnV.png)
+
+![iFKWRd.png](https://i.328888.xyz/2023/04/20/iFKWRd.png)
+
+
+
