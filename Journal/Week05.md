@@ -34,10 +34,11 @@ Write down what was not done during the week and why (difficulties).
 ### Maxwell (Infrastructure Tester):
 
 #### Done
-Write down what was done during the week.
+Helped Brioche and the developers with spelling errors in the System Design documents.
+Successfully pulled the new docker image created by the developers.
+Continue learning about the testing strategies.
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
 
 ### Still (Database Developers):
 
