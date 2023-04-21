@@ -5,10 +5,12 @@
 ### Bill (Database Architect):
 
 #### Done
-Write down what was done during the week.
+- finished drafting E-R model graphically(not final version) with help from Brioche
+- designed a fluxogram for the possible use cases in the project (for future reference)
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
+- established a final E-R model due to changes still being made in the RA
+- talked to the server team leader to discuss about the microservice to be implemented
 
 
 ### Brioche (Database Engineer):
