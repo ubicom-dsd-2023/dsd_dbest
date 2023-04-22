@@ -63,25 +63,37 @@ Tested the Bill's E-R diagram and model.
 #### Not done, why?
 - We need more detail about interface in order to finish our SDS.
 
-
 ## Next goals:
 
 ### Bill (Database Architect):
 
-- [ ] task
+- [ ] Improve the E-R model and the database requirements. You should try to talk to the other teams in order to correct and improve the model.
+- [ ] You should discuss with Brioche the structure and functionality of the DAO (database library)to be created by our team.
+
+* Ask for feedback from the other teams.
 
 ### Brioche (Database Engineer):
 
-- [ ] task
+- [ ] You should help Bill improve the E-R model and the database requirements.
+- [ ] You should also discuss with Bill the structure and functionality of the DAO (database library)to be created by our team.
 
-### Carlos (Architecture Tester):
+* Ask for feedback from the other teams.
 
-- [ ] task
+### Carlos (Architecture Tester) and Maxwell (Infrastructure Tester):
 
-### Maxwell (Infrastructure Tester):
+- [ ] This week you should continue to support Bill and Brioche's tasks, be proactive and ask them what they need. You should also validate the documentation they produce.
+- [ ] You should evaluate and provide feedback on the documentation and databases as quickly and accurately as possible. 
+- [ ] When analyzing the database architecture, you should look for errors or if anything is missing. They should report it as soon as possible.
+- [ ] It is critical that they analyze how they are going to test the database. All requirements must be validated.
 
-- [ ] task
 
 ### Still and Watson (Database Developers):
 
-- [ ] task
+- [ ] During this week, you should continue to improve the database with new needs that arise. You should create one database for production and another for testing. 
+- [ ] Should continue to improve the documentation so that it becomes easier to follow.
+- [ ] Should start creating the python library with the methods that meet the functional requirements of the database.
+
+For this task, I need you to interact with Testers. You should publish all the generated code on github inside a folder named "src".
+
+
+Thank you for your work and have a good week. 🚀
