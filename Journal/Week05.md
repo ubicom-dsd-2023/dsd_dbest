@@ -27,10 +27,10 @@
 ### Carlos (Architecture Tester):
 
 #### Done
-Write down what was done during the week.
+I Tried to fully understand why I have troubles following the step-by step tutorial
 
 #### Not done, why?
-Write down what was not done during the week and why (difficulties).
+Tested the Bill's E-R diagram and model.
 
 
 ### Maxwell (Infrastructure Tester):
