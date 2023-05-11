@@ -52,11 +52,15 @@ A database developer is a professional who designs, implements, and maintains da
 
 
 
-## document about DB's docker image (version 1.0)
+## document about DB's docker image 
 
 **2023.4.19**  update the database  see **version2.0** below
 
-### environments
+**2023.5.11**  update the database  see **version3.0** below
+
+### version 1.0
+
+#### environments
 
 we run the commands on the Linux terminal.
 
@@ -65,7 +69,7 @@ packages should be installed:
 - postgresql
 - docker
 
-### download the image
+#### download the image
 
 - run this command directly
 
@@ -85,7 +89,7 @@ to examine the download image
 
 ![image-20230405145356933](https://img-blog.csdnimg.cn/3d7edf01b4194759a2aaba78baf2106c.png)
 
-### run the container
+#### run the container
 
 - use "docker run" command to run the container
 
@@ -121,9 +125,9 @@ to examine the running container
 
  
 
-### enter the container and examine the database
+#### enter the container and examine the database
 
-#### enter the container
+##### enter the container
 
 - use
 
@@ -137,7 +141,7 @@ docker exec -it postgres4 bash
 
 
 
-#### examine the database
+##### examine the database
 
 
 
@@ -221,7 +225,7 @@ docker exec -it postgres4 bash
 
     ![image-20230405153023912](https://img-blog.csdnimg.cn/2735eea180ab452490886b4ef0a4fcc9.png)
 
- ## version 2.0
+ ### version 2.0
   - we update the table-structure of database. Use
 
 ```shell
@@ -271,5 +275,16 @@ docker pull sstillzh/pgsql:2.0
 
 ![iFKWRd.png](https://i.328888.xyz/2023/04/20/iFKWRd.png)
 
+### version 3.0
 
+  - we update the table-structure of database. Use
 
+```shell
+docker pull sstillzh/pgsql:3.0
+```
+
+- then we get the new image. Check it
+- we change the structure of "User" table to satisfy the Android APP team's needs. We delete the "age"  attribute.
+- We have insert some training-data of Algorithm team to the "Frame" table.
+
+![iqpnGp.png](https://i.328888.xyz/2023/05/11/iqpnGp.png)
