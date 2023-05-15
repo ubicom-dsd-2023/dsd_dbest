@@ -14,39 +14,82 @@ class Database():
         self.PASSWORD=PASSWORD
         self.HOST=HOST
         self.PORT=PORT
-        
+    
+    #Connect the database
     def Connect(self):
         try:
             conn=psycopg2.connect(database=self.DATABASE,user=self.USER,password=self.PASSWORD,host=self.HOST,port=self.PORT)            
         except Exception as e:
-            raise Exception(e)
+            raise Exception("connect error.")
         return conn
     
     def AddUser(self,user_id,password,birthday,email,phone_number):
-        conn =self.Connect()
+        try:
+            conn =self.Connect()
+        except Exception as e:
+            raise Exception(e)
+            
         cur = conn.cursor()
         #sql="""SELECT*FROM public."User" where "User".user_id=%s"""
         sql="""SELECT * FROM public."User" where "User".user_id=%s;"""
         c=(user_id,)
-        cur.execute(sql,c)
+        try:
+            cur.execute(sql,c)
+        except Exception as e:
+            raise Exception(e)
         rows = cur.fetchall()
         if rows==[]:
             sql="""INSERT INTO "User" (user_id,password,birthday,email,phone_number) VALUES(%s,%s,%s,%s,%s);"""
             c=(user_id,password,birthday,email,phone_number,)
-            cur.execute(sql,c)
+            try:
+                cur.execute(sql,c)
+            except Exception as e:
+                raise Exception(e)
             conn.commit()
         if rows!=[]:
             raise Exception('reduplicated user_id error')
         #print(rows)
         conn.close()
         #return rows
-    
-    def GetUserInfo(self,user_id):
-        conn =self.Connect()
+        
+        
+    def ChangePassword(self,user_id,password):
+        try:
+            conn =self.Connect()
+        except Exception as e:
+            raise Exception(e)
         cur = conn.cursor()
         sql="""SELECT * FROM public."User" where "User".user_id=%s;"""
         c=(user_id,)
-        cur.execute(sql,c)
+        try:
+            cur.execute(sql,c)
+        except Exception as e:
+            raise Exception(e)
+        rows = cur.fetchall()
+        if rows==[]:
+            raise Exception('user not exists error')
+        else:
+            sql ="""update "User" set password=%s where "User".user_id = %s;"""
+            c=(password,user_id,)
+            try:
+                cur.execute(sql,c)
+            except Exception as e:
+                raise Exception(e)
+            conn.commit()
+        conn.close()
+        
+    def GetUserInfo(self,user_id):
+        try:
+            conn =self.Connect()
+        except Exception as e:
+            raise Exception(e)
+        cur = conn.cursor()
+        sql="""SELECT * FROM public."User" where "User".user_id=%s;"""
+        c=(user_id,)
+        try:
+            cur.execute(sql,c)
+        except Exception as e:
+            raise Exception(e)  
         rows = cur.fetchall()
         if rows==[]:
             raise Exception('user not exists error')
@@ -60,11 +103,18 @@ class Database():
     
     
     def LoginUser(self,user_id,password):
-        conn =self.Connect()
+        try:
+            conn =self.Connect()
+        except Exception as e:
+            raise Exception(e)
+            
         cur = conn.cursor()
         sql="""SELECT * FROM public."User" where "User".user_id=%s;"""
         c=(user_id,)
-        cur.execute(sql,c)
+        try:
+            cur.execute(sql,c)
+        except Exception as e:
+            raise Exception(e)
         rows = cur.fetchall()
         if rows==[]:
             raise Exception('user not exists error')
@@ -75,50 +125,77 @@ class Database():
                 
         
     def DeleteUser(self,user_id):
-        conn =self.Connect()
+        try:
+            conn =self.Connect()
+        except Exception as e:
+            raise Exception(e)
         cur = conn.cursor()
         sql="""SELECT * FROM public."User" where "User".user_id=%s;"""
         c=(user_id,)
-        cur.execute(sql,c)
+        try:
+            cur.execute(sql,c)
+        except Exception as e:
+            raise Exception(e)
         rows = cur.fetchall()
         if rows==[]:
             raise Exception('user not exists error')
         else:
             sql ="""delete FROM public."User" where "User".user_id=%s;"""
             c=(user_id,)
-            cur.execute(sql,c)
+            try:
+                cur.execute(sql,c)
+            except Exception as e:
+                raise Exception(e)
             conn.commit()
         conn.close()
         
     def UpdateUserInfo(self,user_id,birthday,phone_number,email):
-        conn =self.Connect()
+        try:
+            conn =self.Connect()
+        except Exception as e:
+            raise Exception(e)
         cur = conn.cursor()
         sql="""SELECT * FROM public."User" where "User".user_id=%s;"""
         c=(user_id,)
-        cur.execute(sql,c)
+        try:
+            cur.execute(sql,c)
+        except Exception as e:
+            raise Exception(e)
         rows = cur.fetchall()
         if rows==[]:
             raise Exception('user not exists error')
         else:
             sql ="""update "User" set birthday= %s,phone_number=%s,email=%s where "User".user_id = %s;"""
             c=(birthday,phone_number,email,user_id,)
-            cur.execute(sql,c)
+            try:
+                cur.execute(sql,c)
+            except Exception as e:
+                raise Exception(e)
             conn.commit()
         conn.close()
             
     def GetDeviceInfo(self,user_id):
-        conn =self.Connect()
+        try:
+            conn =self.Connect()
+        except Exception as e:
+            raise Exception(e)
         cur = conn.cursor()
         sql="""SELECT * FROM public."User" where "User".user_id=%s;"""
         c=(user_id,)
-        cur.execute(sql,c)
+        try:
+            cur.execute(sql,c)
+        except Exception as e:
+            raise Exception(e)
         rows = cur.fetchall()
         if rows==[]:
             raise Exception('user not exists error')
         else:
             sql ="""SELECT * FROM public."Device" where "Device".owner=%s;"""
             c=(user_id,)
-            cur.execute(sql,c)
+            try:
+                cur.execute(sql,c)
+            except Exception as e:
+                raise Exception(e)
             dev=cur.fetchall()
             if dev==[]:
                 raise Exception('device not exists error')
@@ -129,18 +206,27 @@ class Database():
         return ip,port
     
     def BindDevice(self,user_id,IP,Port):
-        conn =self.Connect()
+        try:
+            conn =self.Connect()
+        except Exception as e:
+            raise Exception(e)
         cur = conn.cursor()
         sql="""SELECT * FROM public."User" where "User".user_id=%s;"""
         c=(user_id,)
-        cur.execute(sql,c)
+        try:
+            cur.execute(sql,c)
+        except Exception as e:
+            raise Exception(e)
         rows = cur.fetchall()
         if rows==[]:
             raise Exception('user not exists error')
         else:
             sql ="""SELECT * FROM public."Device" where "Device".owner=%s;"""
             c=(user_id,)
-            cur.execute(sql,c)
+            try:
+                cur.execute(sql,c)
+            except Exception as e:
+                raise Exception(e)
             dev=cur.fetchall()
             if dev!=[]:
                 raise Exception('device repeat binding error')
@@ -152,25 +238,38 @@ class Database():
         conn.close()
     
     def UnbindDevice(self,user_id):
-         conn =self.Connect()
+         try:
+            conn =self.Connect()
+         except Exception as e:
+            raise Exception(e)
          cur = conn.cursor()
          sql="""SELECT * FROM public."User" where "User".user_id=%s;"""
          c=(user_id,)
-         cur.execute(sql,c)
+         try:
+             cur.execute(sql,c)
+         except Exception as e:
+             raise Exception(e)
          rows = cur.fetchall()
          if rows==[]:
              raise Exception('user not exists error')
          else:
              sql ="""SELECT * FROM public."Device" where "Device".owner=%s;"""
              c=(user_id,)
-             cur.execute(sql,c)
+             try:
+                 cur.execute(sql,c)
+             except Exception as e:
+                 raise Exception(e)
+                 
              dev=cur.fetchall()
              if dev==[]:
                  raise Exception('device not exists error')
              else:
                  sql="""delete FROM public."Device" where "Device".owner=%s;"""
                  c=(user_id,)
-                 cur.execute(sql,c)
+                 try:
+                     cur.execute(sql,c)
+                 except Exception as e:
+                     raise Exception(e)
                  conn.commit()
          conn.close()
       
