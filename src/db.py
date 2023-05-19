@@ -2,7 +2,7 @@
 """
 Created on Tue May  2 18:47:35 2023
 
-@author: wang'shi'yu、lizhenhe
+@author: wang'shi'yu
 """
 
 import psycopg2
@@ -27,7 +27,63 @@ class Database():
         except Exception as e:
             raise Exception("connect error.")
         return conn
-
+    
+    
+    def AddManger(self,user_id,password,birthday,email,phone_number):
+        try:
+            conn =self.Connect()
+        except Exception as e:
+            raise Exception(e)
+            
+        cur = conn.cursor()
+        #sql="""SELECT*FROM public."User" where "User".user_id=%s"""
+        sql="""SELECT * FROM public."User" where "User".user_id=%s;"""
+        c=(user_id,)
+        try:
+            cur.execute(sql,c)
+        except Exception as e:
+            raise Exception(e)
+        rows = cur.fetchall()
+        if rows==[]:
+            sql="""INSERT INTO "User" (user_id,password,birthday,email,phone_number,user_type) VALUES(%s,%s,%s,%s,%s,%s);"""
+            user_type=1
+            c=(user_id,password,birthday,email,phone_number,user_type,)
+            try:
+                cur.execute(sql,c)
+            except Exception as e:
+                raise Exception(e)
+            conn.commit()
+        if rows!=[]:
+            raise Exception('reduplicated user_id error')
+        #print(rows)
+        conn.close()
+        #return rows
+    
+    def LoginManger(self,user_id,password):
+        try:
+            conn =self.Connect()
+        except Exception as e:
+            raise Exception(e)
+            
+        cur = conn.cursor()
+        sql="""SELECT * FROM public."User" where "User".user_id=%s;"""
+        c=(user_id,)
+        try:
+            cur.execute(sql,c)
+        except Exception as e:
+            raise Exception(e)
+        rows = cur.fetchall()
+        if rows==[]:
+            raise Exception('user not exists error')
+        else:
+            if rows[0][1]!=password:
+                raise Exception('user_id or password error')
+        conn.close()
+        user_type=rows[0][5]
+        if user_type!=1 and user_type!=0:
+            raise Exception("not manager or admin error")
+        return user_type
+    
     def AddUser(self, user_id, password, birthday, email, phone_number):
         try:
             conn = self.Connect()
@@ -100,10 +156,11 @@ class Database():
         # print(type(rows))
         # print(rows)
         conn.close()
-        birthday = rows[0][4]
-        phone_number = rows[0][3]
-        email = rows[0][5]
-        return birthday, phone_number, email
+        birthday = rows[0][3]
+        phone_number = rows[0][2]
+        email = rows[0][4]
+        user_type=rows[0][5]
+        return birthday, phone_number, email,user_type
 
     def LoginUser(self, user_id, password):
         try:
