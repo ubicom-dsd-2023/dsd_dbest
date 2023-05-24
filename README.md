@@ -58,6 +58,8 @@ A database developer is a professional who designs, implements, and maintains da
 
 **2023.5.11**  update the database  see **version3.0** below
 
+2023.5.23  update the database  see **version4.0** below
+
 ### version 1.0
 
 #### environments
@@ -288,3 +290,21 @@ docker pull sstillzh/pgsql:3.0
 - We have insert some training-data of Algorithm team to the "Frame" table.
 
 ![iqpnGp.png](https://i.328888.xyz/2023/05/11/iqpnGp.png)
+
+### version 4.0
+
+- we update the table-structure of database. Use
+
+```shell
+docker pull sstillzh/pgsql:4.0
+```
+
+then we get new image. Check it.
+
+- We add new table "log" to satisfy the web-team's needs.
+
+[![oJJCE0.png](https://www.helloimg.com/images/2023/05/24/oJJCE0.png)](https://www.helloimg.com/image/oJJCE0)
+
+- We add a attribute "user_type" to the table "User"
+
+[![oJJGOm.png](https://www.helloimg.com/images/2023/05/24/oJJGOm.png)](https://www.helloimg.com/image/oJJGOm)
