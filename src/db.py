@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue May  2 18:47:35 2023
+Created on Wed May 24 12:54:09 2023
 
 @author: wang'shi'yu
 """
+
 
 import psycopg2
 import os
@@ -12,7 +13,7 @@ import json
 import numpy as np
 
 class Database():
-    def __init__(self, DATABASE, USER, PASSWORD, HOST, PORT):
+    def __init__(self, DATABASE='production', USER='postgres', PASSWORD='123456', HOST='liyu.utad.pt', PORT='55332'):
         self.DATABASE = DATABASE
         self.USER = USER
         self.PASSWORD = PASSWORD
@@ -28,6 +29,16 @@ class Database():
             raise Exception("connect error.")
         return conn
     
+    def GetallUser(self):
+        try:
+            conn =self.Connect()
+        except Exception as e:
+            raise Exception(e)
+        cur = conn.cursor()
+        sql="""SELECT user_id FROM public."User";"""
+        cur.execute(sql)
+        rows=cur.fetchall()
+        return rows
     
     def AddManger(self,user_id,password,birthday,email,phone_number):
         try:
@@ -100,8 +111,10 @@ class Database():
             raise Exception(e)
         rows = cur.fetchall()
         if rows == []:
-            sql = """INSERT INTO "User" (user_id,password,birthday,email,phone_number) VALUES(%s,%s,%s,%s,%s);"""
-            c = (user_id, password, birthday, email, phone_number,)
+            sql = """INSERT INTO "User" (user_id,password,birthday,email,phone_number,user_type) VALUES(%s,%s,%s,%s,%s,%s);"""
+            user_type=2
+            c=(user_id,password,birthday,email,phone_number,user_type,)
+            
             try:
                 cur.execute(sql, c)
             except Exception as e:
@@ -156,8 +169,8 @@ class Database():
         # print(type(rows))
         # print(rows)
         conn.close()
-        birthday = rows[0][3]
-        phone_number = rows[0][2]
+        birthday = rows[0][2]
+        phone_number = rows[0][3]
         email = rows[0][4]
         user_type=rows[0][5]
         return birthday, phone_number, email,user_type
@@ -179,7 +192,7 @@ class Database():
         if rows == []:
             raise Exception('user not exists error')
         else:
-            if rows[0][2] != password:
+            if rows[0][1] != password:
                 raise Exception('user_id or password error')
         conn.close()
 
@@ -260,8 +273,8 @@ class Database():
                 raise Exception('device not exists error')
             # conn.commit()
         conn.close()
-        ip = dev[0][0]
-        port = dev[0][3]
+        ip = dev[0][1]
+        port = dev[0][2]
         return ip, port
 
     def BindDevice(self, user_id, IP, Port):
