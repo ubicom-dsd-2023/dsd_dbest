@@ -2,7 +2,7 @@
 """
 Created on Wed May 24 12:54:09 2023
 
-@author: wang'shi'yu
+@author: wang'shi'yu 、li`zhen`he
 """
 
 
@@ -357,14 +357,14 @@ class Database():
 
         try:
             sql = """ SELECT * FROM public."User" where "User".user_id=%s """
-            params = (user_id)
+            params = (user_id,)
             cursor.execute(sql, params)
             res = cursor.fetchall()
             if (res == []):
                 raise Exception('user not exists error')
 
             sql = """ SELECT "data_sensed_by_six_multiply_nine","label" FROM public."Frame" where "Frame".user_id=%s """
-            params = (user_id)
+            params = (user_id,)
             cursor.execute(sql, params)
             res = cursor.fetchall()
 
@@ -411,34 +411,33 @@ class Database():
         try:
 
             sql = """ SELECT * FROM public."User" where "User".user_id=%s """
-            params = (user_id)
+            params = (user_id,)
             cursor.execute(sql, params)
             res = cursor.fetchall()
             if (res == []):
                 raise Exception('user not exists error')
 
-            sql = """ SELECT * FROM public."MotionRecord" where "MotionRecord".user_id=%s and "MotionRecord".created_time=%s """
-            params = (user_id, create_time)
+            sql = """ SELECT * FROM public."MotionRecord" where "MotionRecord".user_id=%s and "MotionRecord".create_time=%s """
+            params = (user_id, create_time,)
             cursor.execute(sql, params)
             res = cursor.fetchall()
             if (res == []):
                 raise Exception('motion record not exists error')
 
-            sql = """ SELECT * FROM public."MotionRecord" where user_id=%s and created_time=%s """
-            params = (user_id, create_time)
+            sql = """ SELECT * FROM public."MotionRecord" where user_id=%s and create_time=%s """
+            params = (user_id, create_time,)
             cursor.execute(sql, params)
             res = cursor.fetchall()
             lower_bound = res[0][3]
             upper_bound = res[0][4]
 
             sql = """  DELETE FROM public."Frame" where user_id=%s and time_stamp>=%s and time_stamp<=%s """
-            params = (user_id, lower_bound, upper_bound)
+            params = (user_id, lower_bound, upper_bound,)
             cursor.execute(sql, params)
 
-            sql = """ DELETE FROM public."MotionRecord" where user_id=%s and created_time=%s """
-            params = (user_id, create_time)
+            sql = """ DELETE FROM public."MotionRecord" where user_id=%s and create_time=%s """
+            params = (user_id, create_time,)
             cursor.execute(sql, params)
-            # res = cursor.fetchall()
 
             print("successfully")
 
@@ -461,7 +460,7 @@ class Database():
         try:
 
             sql = """ SELECT * FROM public."User" where "User".user_id=%s """
-            params = (user_id)
+            params = (user_id,)
             cursor.execute(sql, params)
             data = cursor.fetchall()
             if (data == []):
@@ -471,14 +470,13 @@ class Database():
             upper_bound = res[num - 1]['timestamp']
 
             sql = """ INSERT INTO "MotionRecord"(user_id,created_time,label,lower_bound,upper_bound) VALUES (%s,%s,%s,%s,%s)"""
-            params = (user_id, create_time, label, lower_bound, upper_bound)
+            params = (user_id, create_time, label, lower_bound, upper_bound,)
             cursor.execute(sql, params)
 
             for i in range(num):
                 sql = """ INSERT INTO "Frame"(user_id,time_stamp,data_sensed_by_six_multiply_nine,label) VALUES (%s,%s,%s,%s)"""
-                params = (user_id, res[i]['timestamp'], json.dumps(res[i]), label)
+                params = (user_id, res[i]['timestamp'], json.dumps(res[i]), label,)
                 cursor.execute(sql, params)
-            # res = cursor.fetchall()
 
             print("successfully")
 
@@ -500,14 +498,14 @@ class Database():
         try:
 
             sql = """ SELECT * FROM public."User" where "User".user_id=%s """
-            params = (user_id)
+            params = (user_id,)
             cursor.execute(sql, params)
             data = cursor.fetchall()
             if (data == []):
                 raise Exception('user not exists error')
 
             sql = """SELECT * FROM public."MotionRecord" where "MotionRecord".user_id=%s"""
-            params = (user_id)
+            params = (user_id,)
             cursor.execute(sql, params)
             data = cursor.fetchall()
             label = []
@@ -517,7 +515,7 @@ class Database():
             end = []
 
             for i in range(len(data)):
-                label.append(data[i][0])
+                label.append(data[i][2])
 
                 create_time.append(data[i][1])
                 begin.append(data[i][3])
@@ -545,7 +543,7 @@ class Database():
         try:
 
             sql = """ SELECT * FROM public."User" where "User".user_id=%s """
-            params = (user_id)
+            params = (user_id,)
             cursor.execute(sql, params)
             data = cursor.fetchall()
             if (data == []):
@@ -554,19 +552,19 @@ class Database():
             if (label < 0 or label > 7):
                 raise Exception('label invalid error')
 
-            sql = """ SELECT * FROM public."MotionRecord" where user_id=%s and created_time=%s """
-            params = (user_id, create_time)
+            sql = """ SELECT * FROM public."MotionRecord" where user_id=%s and create_time=%s """
+            params = (user_id, create_time,)
             cursor.execute(sql, params)
             res = cursor.fetchall()
             lower_bound = res[0][3]
             upper_bound = res[0][4]
 
             sql = """update "Frame" set label= %s where "Frame".user_id = %s and "Frame".time_stamp>=%s and "Frame".time_stamp<=%s """
-            params = (label, user_id, lower_bound, upper_bound)
+            params = (label, user_id, lower_bound, upper_bound,)
             cursor.execute(sql, params)
 
-            sql = """update "MotionRecord" set label= %s where "MotionRecord".user_id = %s and "MotionRecord".created_time=%s"""
-            params = (label, user_id, create_time)
+            sql = """update "MotionRecord" set label= %s where "MotionRecord".user_id = %s and "MotionRecord".create_time=%s"""
+            params = (label, user_id, create_time,)
             cursor.execute(sql, params)
             print("successfully")
 
@@ -601,11 +599,11 @@ class Database():
                 y1 = data[1][i]
                 y2 = data[2][i]
                 y3 = ((x3 - x1) * (x3 - x2)) / ((x0 - x1) * (x0 - x2)) * y0 + ((x3 - x0) * (x3 - x2)) / (
-                            (x1 - x0) * (x1 - x2)) * y1 + ((x3 - x0) * (x3 - x1)) / ((
-                                                                                             x2 - x0) * (x2 - x1)) * y2
+                        (x1 - x0) * (x1 - x2)) * y1 + ((x3 - x0) * (x3 - x1)) / ((
+                                                                                         x2 - x0) * (x2 - x1)) * y2
                 y4 = ((x4 - x1) * (x4 - x2)) / ((x0 - x1) * (x0 - x2)) * y0 + ((x4 - x0) * (x4 - x2)) / (
-                            (x1 - x0) * (x1 - x2)) * y1 + ((x4 - x0) * (x4 - x1)) / ((
-                                                                                             x2 - x0) * (x2 - x1)) * y2
+                        (x1 - x0) * (x1 - x2)) * y1 + ((x4 - x0) * (x4 - x1)) / ((
+                                                                                         x2 - x0) * (x2 - x1)) * y2
                 res[3][i] = y3
                 res[4][i] = y4
         elif (k == 4):
@@ -620,11 +618,11 @@ class Database():
                 y2 = data[2][i]
                 y3 = data[3][i]
                 y4 = ((x4 - x1) * (x4 - x2) * (x4 - x3)) / ((x0 - x1) * (x0 - x2) * (x0 - x3)) * y0 + (
-                            (x4 - x0) * (x4 - x2) * (x4 - x3)) / ((x1 - x0) * (x1 - x2)
-                                                                  * (x1 - x3)) * y1 + (
-                                 (x4 - x0) * (x4 - x1) * (x4 - x3)) / ((x2 - x0) * (x2 - x1) * (x2 - x3)) * y2 + (
-                                 (x4 - x0) * (x4 - x1) * (x4 - x2)) / ((
-                                                                               x3 - x0) * (x3 - x1) * (x3 - x2)) * y3
+                        (x4 - x0) * (x4 - x2) * (x4 - x3)) / ((x1 - x0) * (x1 - x2)
+                                                              * (x1 - x3)) * y1 + (
+                             (x4 - x0) * (x4 - x1) * (x4 - x3)) / ((x2 - x0) * (x2 - x1) * (x2 - x3)) * y2 + (
+                             (x4 - x0) * (x4 - x1) * (x4 - x2)) / ((
+                                                                           x3 - x0) * (x3 - x1) * (x3 - x2)) * y3
                 res[4][i] = y4
 
             return res
@@ -640,7 +638,7 @@ class Database():
         try:
 
             sql = """ SELECT * FROM public."User" where "User".user_id=%s """
-            params = (user_id)
+            params = (user_id,)
             cursor.execute(sql, params)
             data = cursor.fetchall()
             if (data == []):
@@ -648,7 +646,7 @@ class Database():
 
 
             sql = """ SELECT * FROM public."Log" where user_id=%s  """
-            params = (user_id)
+            params = (user_id,)
             cursor.execute(sql, params)
             data = cursor.fetchall()
             log_time=[]
@@ -675,23 +673,24 @@ class Database():
         try:
 
             sql = """ SELECT * FROM public."User" where "User".user_id=%s """
-            params = (user_id)
+            params = (user_id,)
             cursor.execute(sql, params)
             data = cursor.fetchall()
             if (data == []):
                 raise Exception('user not exists error')
 
             sql = """ SELECT * FROM public."Log" where "Log".user_id=%s and "Log".log_time=%s """
-            params = (user_id, log_time)
+            params = (user_id, log_time,)
             cursor.execute(sql, params)
             data = cursor.fetchall()
+
             if (data == []):
                 raise Exception('log not exists error')
 
             sql = """ update "Log" set log_content= %s where "Log".user_id = %s and "Log".log_time=%s  """
-            params = (log_content,user_id,log_time)
+            params = (log_content,user_id,log_time,)
             cursor.execute(sql, params)
-            data = cursor.fetchall()
+
 
 
             print("successfully")
@@ -712,23 +711,23 @@ class Database():
         try:
 
             sql = """ SELECT * FROM public."User" where "User".user_id=%s """
-            params = (user_id)
+            params = (user_id,)
             cursor.execute(sql, params)
             data = cursor.fetchall()
             if (data == []):
                 raise Exception('user not exists error')
 
             sql = """ SELECT * FROM public."Log" where "Log".user_id=%s and "Log".log_time=%s """
-            params = (user_id,log_time)
+            params = (user_id,log_time,)
             cursor.execute(sql, params)
             data = cursor.fetchall()
             if (data == []):
                 raise Exception('log not exists error')
 
             sql = """ DELETE FROM public."Log" where user_id=%s and log_time=%s """
-            params = (user_id, log_time)
+            params = (user_id, log_time,)
             cursor.execute(sql, params)
-            data = cursor.fetchall()
+
 
 
             print("successfully")
